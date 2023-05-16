@@ -1,12 +1,15 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 
-###############
-# Outputs    ##
-###############
+##################################################
+# OUTPUTS                                        #
+##################################################
+output "role_definition_ids" {
+  value       = azurerm_role_definition.custom_role.*.role_definition_id
+  description = "List of Role Definition IDs."
+}
 
-# Add outputs for the resource
-# output "template_example" {
-#  value       = template.name
-#  description = "Resource group name"
-# }
+output "role_definition_resource_ids" {
+  value       = azurerm_role_definition.custom_role.*.role_definition_resource_id
+  description = "List of Azure Resource Manager IDs for the resources."
+}
